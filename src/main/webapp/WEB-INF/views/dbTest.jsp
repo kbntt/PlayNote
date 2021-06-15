@@ -10,9 +10,10 @@
 <% 
 
 	Class.forName("com.mysql.jdbc.Driver"); 
-	String dbURL ="jdbc:mysql://localhost:3306/kbntt?characterEncoding=utf8&amp;useSSL=false";
-	String dbID= "kbntt";
-    String dbPassword="optech8775";
+//	String dbURL ="jdbc:mysql://localhost:3306/test_schema?allowPublicKeyRetrieval=true&characterEncoding=utf8&amp;useSSL=false";
+	String dbURL ="jdbc:mysql://localhost:3306/test_schema";
+	String dbID= "test_schema";
+    String dbPassword="1q2w3e4r%t";
     
 	Connection conn = DriverManager.getConnection(dbURL, dbID , dbPassword);
 	
