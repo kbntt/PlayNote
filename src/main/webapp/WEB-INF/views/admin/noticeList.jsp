@@ -31,7 +31,7 @@
         function go_it(url){
             switch (url){
                 case "HOME" :
-                    url = "/";
+                    url = "${pageContext.request.contextPath}/";
                     break;
                 case "BOARD_NOTICE" :
                     url = "${pageContext.request.contextPath}/admin/boardNotice?pagenum=1&contentnum=0";

@@ -12,27 +12,28 @@
     <script type="text/javascript">
 	   
         function topMenuGo(url,subMenu){
+        	debugger;
             switch (url){
                 case "HOME" :
-                    url = "/home/index";
+                    url = "/playnote/home/index";
                     break;
                 case "BOARD_NOTICE" :
-                    url = "/main/boardNotice?pagenum=1&contentnum=0";
+                    url = "/playnote/main/boardNotice?pagenum=1&contentnum=0";
                     break;
                 case "BOARD_USER" :
-                    url = "/main/boardUser";
+                    url = "/playnote/main/boardUser";
                     break;
                 case "ADMIN" :
-                    url = "/admin/loginForm";
+                    url = "/playnote/admin/loginForm";
                     break;
                 case "ADMIN_NOTICE_LIST" :
-                    url = "/admin/noticeList";
+                    url = "/playnote/admin/noticeList";
                     break;
                 case "WEB_FRAME_VUE_MAIN" :
-                    url = "/webFrame/vueMain";
+                    url = "/playnote/webFrame/vueMain";
                     break;
                 case "JAVA_BASE_MAIN" :
-                    url = "/java/base?page=page_001&subMenu="+subMenu;
+                    url = "/playnote/java/base?page=page_001&subMenu="+subMenu;
                     break;    
                     
                 default :
@@ -143,7 +144,7 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">ADMIN <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="javascript:topMenuGo('ADMIN_NOTICE_LIST','');">공지사항</a></li>
+                <li><a href="javascript:topMenuGo('ADMIN_NOTICE_LIST','');">공지사항4444</a></li>
               </ul>
             </li>
           </ul>

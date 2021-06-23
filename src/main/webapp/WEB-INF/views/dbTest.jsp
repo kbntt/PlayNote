@@ -9,7 +9,7 @@
 <body>
 <% 
 
-	Class.forName("com.mysql.jdbc.Driver"); 
+	Class.forName("com.mysql.cj.jdbc.Driver"); 
 	//String dbURL ="jdbc:mysql://localhost:3306/test_schema?allowPublicKeyRetrieval=true&characterEncoding=utf8&amp;useSSL=false";
 	String dbURL ="jdbc:mysql://localhost:3306/test_schema";
 	String dbID= "root";

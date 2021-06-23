@@ -47,11 +47,11 @@
         }
     </script>
   <body>
-  <form name="form" method="post">
         <!--/ TOP MENU     TOP MENU     TOP MENU     TOP MENU     TOP MENU     TOP MENU     TOP MENU     TOP MENU     TOP MENU     TOP MENU         -->
         <jsp:include page="../topMenu.jsp" flush="true"/>
         <!--/ TOP MENU     TOP MENU     TOP MENU     TOP MENU     TOP MENU     TOP MENU     TOP MENU     TOP MENU     TOP MENU     TOP MENU         -->
         
+  <form name="form" method="post" action="${pageContext.request.contextPath}/admin/boardNoticeModify">
         <div class="container-fluid">
           <div class="row">
             <!--/ LEFT MENU     LEFT MENU     LEFT MENU     LEFT MENU     LEFT MENU     LEFT MENU     LEFT MENU     LEFT MENU     LEFT MENU         -->
@@ -67,7 +67,7 @@
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
               <h1 class="page-header">Play Note  <img src="${pageContext.request.contextPath}/resources/image/icons-motorcycle-01.png" width="50" height="50" border="1" alt=""></h1>
               
-              <h2 class="sub-header">공지사항</h2>
+              <h2 class="sub-header">공지사항22222</h2>
               
               
             <!--/ ============================================================================================================================================ -->
@@ -110,7 +110,7 @@
 		          </tbody>
 		        </table>
 		      <div class="btn-group btn-group-sm" role="group" aria-label="...">
-		        <input type="submit" class="btn btn-default" value="수정하기">
+		        <input type="submit" class="btn btn-default" value="수정하기X">
 		        <input type="button" class="btn btn-default" value="취소" onclick="document.location.href='/bbs/content.bbs?articleNumber=articleNumber&pageNum=pageNum'">
 		      </div>
 		    </div>

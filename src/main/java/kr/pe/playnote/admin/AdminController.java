@@ -191,6 +191,39 @@ public class AdminController {
     
 
     /**
+     * 공시사항 수정
+     */ 
+    @SuppressWarnings("unchecked")
+    @RequestMapping(value = "/admin/boardNoticeModify", method = {RequestMethod.GET, RequestMethod.POST})
+    public String boardNoticeModify(Locale locale, Model model, HttpServletRequest request, BoardDto dto) {
+        
+        if( !ServletUtils.aliveSession(request)){ 
+            return "index";
+        }
+        
+        HashMap<String, List<String>> paramMap =  new HashMap<String, List<String>>();
+        paramMap.put("list", dto.getListUuid());
+     // 수정.   boardService.deleteList(paramMap);
+        
+        HashMap<String, Object> hm = new HashMap<String, Object>();
+        hm.put("msgCode", Code.SUCCESS);
+        hm.put("msgContent", messageSource.getMessage("mag_003", null, "default text", locale));
+        
+        JSONArray jsonArray = new JSONArray();
+        jsonArray.add(new JSONObject(hm));
+        
+        JSONObject finalJsonObject1 = new JSONObject();
+        finalJsonObject1.put("msgArray", jsonArray);
+        
+        String json = finalJsonObject1.toString();
+	    request.setAttribute("data", json);
+		return "comm/json";
+        
+    }
+
+    
+
+    /**
      * 공시사항 삭제
      */ 
     @SuppressWarnings("unchecked")

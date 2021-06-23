@@ -22,7 +22,7 @@
     <meta name="author" content="">
     <link rel="icon" href="${pageContext.request.contextPath}/resources/image/icons-motorcycle-01.png">
 
-    <title>Play Note</title>
+    <title>Play@@Note</title>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/dist/css/bootstrap.min.css">
     <!-- Custom styles for this template -->
@@ -38,22 +38,23 @@
 	<script type="text/javascript">
 	
 	    function go_it(url){
+	
 	        switch (url){
 	            case "HOME" :
-	                url = "/";
+	                url = "${pageContext.request.contextPath}/";
 	                break;
 	            case "BOARD_NOTICE" :
-	                url = "/main/boardNotice?pagenum=1&contentnum=0";
+	                url = "${pageContext.request.contextPath}/main/boardNotice?pagenum=1&contentnum=0";
 	                break;
 	            case "BOARD_USER" :
-	                url = "/main/boardUser";
+	                url = "${pageContext.request.contextPath}/main/boardUser";
 	                break;
 
 	            case "PASSWORD_TEST" :
-	                url = "/main/passwordTest";
+	                url = "${pageContext.request.contextPath}/main/passwordTest";
 	                break;
 	            default :
-	                url = "/";
+	                url = "${pageContext.request.contextPath}/";
 	        }
 	        
 	        document.form.action  = url;                                                   
@@ -86,10 +87,10 @@
 	        
 	        <!--/ BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY          -->
 	        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-	          <h1 class="page-header">Play Note  <img src="${pageContext.request.contextPath}/resources/image/icons-motorcycle-01.png" width="50" height="50" border="1" alt=""></h1>
+	          <h1 class="page-header">Play NotT  <img src="${pageContext.request.contextPath}/resources/image/icons-motorcycle-01.png" width="50" height="50" border="1" alt=""></h1>
 	          
 	          <div class="jumbotron" style="background-image: URL(${pageContext.request.contextPath}/resources/image/header_bg.jpg) ;">
-		        <h1>My life is the wind.</h1>
+		        <h1>YOUR life is the wind.</h1>
 		        <p>Come empty, return empty. I only exist in people's memories.</p>
 		      </div>
 	          <h2 class="sub-header"><spring:message code="notice" text="default text" /></h2>

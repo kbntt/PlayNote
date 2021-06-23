@@ -118,10 +118,10 @@
         function go_register(url){
             switch (url){
                 case "REGISTER" :
-                    url = "/main/registerForm";
+                    url = "${pageContext.request.contextPath}/main/registerForm";
                     break;
                 default :
-                    url = "/";
+                    url = "${pageContext.request.contextPath}/";
             }
             
             document.form.action  = url;                                                   

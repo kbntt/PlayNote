@@ -14,7 +14,8 @@ public class BoardDto {
     private String subject;         
     private String contents;        
     private int    hits;            
-    private Date   createDatetime;
+    private Date   createDatetime;  
+    private String   title;
     
     public String getUserName() {
 		return userName;
@@ -171,6 +172,18 @@ public class BoardDto {
 
 	public void setListUuid(List<String> listUuid) {
 		this.listUuid = listUuid;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public void setTotalCount(int totalCount) {
+		this.totalCount = totalCount;
 	}
 
 }

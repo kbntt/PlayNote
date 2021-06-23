@@ -31,13 +31,13 @@
 	    function go_it(url){
 	        switch (url){
 	            case "HOME" :
-	                url = "/";
+	                url = "${pageContext.request.contextPath}";
 	                break;
 	            case "BOARD_NOTICE" :
-	                url = "/main/boardNotice?pagenum=1&contentnum=0";
+	                url = "${pageContext.request.contextPath}/main/boardNotice?pagenum=1&contentnum=0";
 	                break;
 	            case "BOARD_USER" :
-	                url = "/main/boardUser";
+	                url = "${pageContext.request.contextPath}/main/boardUser";
 	                break;
 	            default :
 	                url = "/";
@@ -85,7 +85,7 @@
 	        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 	          <h1 class="page-header">Play Note  <img src="${pageContext.request.contextPath}/resources/image/icons-motorcycle-01.png" width="50" height="50" border="1" alt=""></h1>
 	          
-	          <h2 class="sub-header">공지사항</h2>
+	          <h2 class="sub-header">공지사항11111</h2>
 	          <div class="table-responsive">
 	            <table class="table table-striped">
 	              <thead>
