@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.pe.playnote.com.dao.IMemberdDao">
+
+     <insert id="memberSave"> 
+		         
+		INSERT INTO MEMBER(
+		         UUID              
+		        ,EMAIL             
+		        ,PASSWORD          
+		        ,USERNAME          
+		        ,NICKNAME       
+		        ,PHONE             
+		        ,EMAIL_CERT        
+		        ,REGISTER_DATETIME 
+		        ,LASTLOGIN_DATETIME
+		        ,LASTLOGIN_IP      
+		        ,AUTH          
+		        ,DELETE_YN
+		        ,ADMINMEMO         
+		        ,CREATE_DATETIME   
+		        ,CREATE_USER       
+		        ,UPDATE_DATETIME   
+		        ,UPDATE_USER 
+		       )
+		VALUES(
+				 #{uuid}
+				,#{email}
+				,#{password}
+				,#{username}
+				,#{nickname}
+				,#{phone}
+				,#{emailCert}
+				,NOW()
+				,#{lastloginDatetime}
+				,#{lastloginIp}
+				,#{auth}
+                ,#{deleteYn}
+				,#{adminmemo}
+				,NOW()
+				,#{createUser}
+				,#{updateDatetime}
+				,#{updateUser}
+		      )
+     </insert>
+
+    <select id="emailDuplicateCheck" parameterType="java.util.HashMap" resultType="kr.pe.playnote.dto.MemberDto">
+    <![CDATA[
+        /* playnote.com.dao.IMemberdDao.emailDuplicateCheck */ 
+		SELECT CASE WHEN 0 < COUNT(1) THEN 'Y'
+		            ELSE 'N'
+		            END AS emailChk  
+		FROM  MEMBER
+		WHERE 1 = 1
+		AND   EMAIL = #{EMAIL}
+     ]]>
+    </select>
+    
+    <select id="list" parameterType="java.util.HashMap" resultType="kr.pe.playnote.dto.MemberDto">
+        /* playnote.com.dao.IMemberdDao.list */
+        SELECT  @rownum := @rownum+1 AS rnum
+               ,UUID               AS uuid             
+               ,EMAIL              AS email            
+               ,PASSWORD           AS password         
+               ,USERNAME           AS username         
+               ,NICKNAME           AS nickname    
+               ,PHONE              AS phone            
+               ,EMAIL_CERT         AS emailCert        
+               ,REGISTER_DATETIME  AS registerDatetime 
+               ,LASTLOGIN_DATETIME AS lastloginDatetime
+               ,LASTLOGIN_IP       AS lastloginIp      
+               ,AUTH           AS auth   
+               ,(
+		          SELECT CODE_NAME
+		          FROM   COMM_CODE
+		          WHERE  1 = 1
+		          AND    PARENTS_CODE = 'AUTH'
+		          AND    DELETE_YN = 'N'
+		          AND    CODE = MEMBER.AUTH
+		        ) AS authName           
+               ,DELETE_YN           AS deleteYn          
+               ,ADMINMEMO          AS adminmemo        
+               ,CREATE_DATETIME    AS createDatetime   
+               ,DATE_FORMAT(CREATE_DATETIME, '%Y-%m-%d %H:%i:%s') AS createDatetimeStr
+               ,CREATE_USER        AS createUser       
+               ,UPDATE_DATETIME    AS updateDatetime   
+               ,UPDATE_USER        AS updateUser 
+        FROM    MEMBER
+               ,(SELECT @rownum := 0) AS R
+        WHERE 1 = 1
+        <if test='UUID != null'>
+          AND UUID = #{UUID}
+        </if>
+        <if test='USERNAME != null'>
+          AND USERNAME = #{USERNAME}
+        </if>
+        <if test='PHONE != null'>
+          AND PHONE = #{PHONE}
+        </if>
+        <if test='EMAIL != null'>
+          AND EMAIL = #{EMAIL}
+        </if>
+        <if test='PASSWORD != null'>
+          AND PASSWORD = #{PASSWORD}
+        </if>
+        <if test='AUTH != null'>
+          AND AUTH = #{AUTH}
+        </if>
+        <if test='DELETE_YN != null'>
+          AND DELETE_YN = #{DELETE_YN}
+        </if>
+        <if test="DATE_START != null  and  DATE_END != null  ">
+          AND   DATE_FORMAT(CREATE_DATETIME, '%Y-%m-%d')  BETWEEN #{DATE_START} AND #{DATE_END}
+        </if>
+          ORDER BY CREATE_DATETIME DESC
+    </select>
+    
+    <select id="detail" parameterType="java.util.HashMap" resultType="kr.pe.playnote.dto.MemberDto">
+        /* playnote.com.dao.IMemberdDao.detail */
+        SELECT  UUID               AS uuid             
+               ,EMAIL              AS email            
+               ,PASSWORD           AS password         
+               ,USERNAME           AS username         
+               ,NICKNAME           AS nickname    
+               ,PHONE              AS phone            
+               ,EMAIL_CERT         AS emailCert        
+               ,REGISTER_DATETIME  AS registerDatetime 
+               ,LASTLOGIN_DATETIME AS lastloginDatetime
+               ,LASTLOGIN_IP       AS lastloginIp    
+               ,AUTH                  AS auth
+               ,DELETE_YN          AS deleteYn         
+               ,ADMINMEMO          AS adminmemo        
+               ,CREATE_DATETIME    AS createDatetime   
+               ,CREATE_USER        AS createUser       
+               ,UPDATE_DATETIME    AS updateDatetime   
+               ,UPDATE_USER        AS updateUser  
+        FROM    MEMBER
+        WHERE 1 = 1
+        <if test='UUID != null'>
+          AND UUID = #{UUID}
+        </if>
+        <if test='USERNAME != null'>
+          AND USERNAME = #{USERNAME}
+        </if>
+        <if test='PHONE != null'>
+          AND PHONE = #{PHONE}
+        </if>
+        <if test='EMAIL != null'>
+          AND EMAIL = #{EMAIL}
+        </if>
+        <if test='PASSWORD != null'>
+          AND PASSWORD = #{PASSWORD}
+        </if>
+        <if test='AUTH != null'>
+          AND AUTH = #{AUTH}
+        </if>
+        <if test='DELETE_YN != null'>
+          AND DELETE_YN = #{DELETE_YN}
+        </if>
+        <if test="DATE_START != null  and  DATE_END != null  ">
+          AND   DATE_FORMAT(CREATE_DATETIME, '%Y-%m-%d')  BETWEEN #{DATE_START} AND #{DATE_END}
+        </if>
+    </select>
+    
+    <!-- 로그인 체크 -->
+    <select id="loginChk" parameterType="java.util.HashMap" resultType="kr.pe.playnote.dto.MemberDto">
+    <![CDATA[
+          /* playnote.com.dao.IMemberdDao.loginChk */ 
+          SELECT MAX(A.LOGIN_CHK) AS loginChk
+                ,MAX(A.EMAIL_CHK) AS emailChk
+          FROM   (
+                   SELECT CASE WHEN 0 < COUNT(1) THEN 'Y'
+                          ELSE 'N'
+                          END   AS LOGIN_CHK
+                          ,NULL AS EMAIL_CHK   
+                   FROM    MEMBER
+                   WHERE 1 = 1
+                   AND   EMAIL = #{EMAIL}
+                   AND   PASSWORD = #{PASSWORD}
+                   UNION   
+                   SELECT NULL AS LOGIN_CHK
+                         ,CASE WHEN 0 < COUNT(1) THEN 'Y'
+                               ELSE 'N'
+                               END AS EMAIL_CHK  
+                   FROM  MEMBER
+                   WHERE 1 = 1
+                   AND   EMAIL = #{EMAIL}
+                 )  A
+     ]]>
+    </select>
+    
+    <!-- 관리자 로그인 체크 -->
+    <select id="adminLoginChk" parameterType="java.util.HashMap" resultType="kr.pe.playnote.dto.MemberDto">
+    <![CDATA[
+          /* playnote.com.dao.IMemberdDao.adminLoginChk */ 
+          SELECT MAX(A.LOGIN_CHK) AS loginChk
+                ,MAX(A.EMAIL_CHK) AS emailChk
+          FROM   (
+                   SELECT CASE WHEN 0 < COUNT(1) THEN 'Y'
+                          ELSE 'N'
+                          END   AS LOGIN_CHK
+                          ,NULL AS EMAIL_CHK   
+                   FROM    MEMBER
+                   WHERE 1 = 1
+                   AND   EMAIL = #{EMAIL}
+                   AND   PASSWORD = #{PASSWORD}
+                   AND   AUTH = 'AUTH_10'
+                   UNION   
+                   SELECT NULL AS LOGIN_CHK
+                         ,CASE WHEN 0 < COUNT(1) THEN 'Y'
+                               ELSE 'N'
+                               END AS EMAIL_CHK  
+                   FROM  MEMBER
+                   WHERE 1 = 1
+                   AND   EMAIL = #{EMAIL}
+                   AND   AUTH = 'AUTH_10'
+                 )  A
+     ]]>
+    </select>
+    
+</mapper>
