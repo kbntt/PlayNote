@@ -60,22 +60,22 @@
 </script>
 	        <div class="col-sm-3 col-md-2 sidebar">
 	          <ul class="nav nav-sidebar">
-	            <li id="A1" class=""><a href="javascript:topMenuGo('JAVA_BASE_MAIN','A1');">jdk 설치 </a></li>
-	            <li id="A2" class=""><a href="javascript:topMenuGo('JAVA_BASE_MAIN','A2');">eclipse 설치</a></li>
-	            <li id="A3" class=""><a href="javascript:topMenuGo('JAVA_BASE_MAIN','A3');"></a></li>
-	            <li id="A4" class=""><a href="javascript:topMenuGo('JAVA_BASE_MAIN','A4');"></a></li>
+	            <li id="A1" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','A1','page_001');">이프로젝트는..</a></li>
+	            <li id="A2" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','A2','page_002');">Spring Boot 설치</a></li>
+	            <li id="A3" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','A3');"></a></li>
+	            <li id="A4" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','A4');"></a></li>
 	          </ul>
 	          <ul class="nav nav-sidebar">
-	            <li id="B1" class=""><a href="javascript:topMenuGo('JAVA_BASE_MAIN','B1');"></a></li>
-	            <li id="B2" class=""><a href="javascript:topMenuGo('JAVA_BASE_MAIN','B2');"></a></li>
-	            <li id="B3" class=""><a href="javascript:topMenuGo('JAVA_BASE_MAIN','B3');"></a></li>
-	            <li id="B4" class=""><a href="javascript:topMenuGo('JAVA_BASE_MAIN','B4');"></a></li>
-	            <li id="B5" class=""><a href="javascript:topMenuGo('JAVA_BASE_MAIN','B5');"></a></li>
+	            <li id="B1" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','B1');"></a></li>
+	            <li id="B2" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','B2');"></a></li>
+	            <li id="B3" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','B3');"></a></li>
+	            <li id="B4" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','B4');"></a></li>
+	            <li id="B5" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','B5');"></a></li>
 	          </ul>
 	          <ul class="nav nav-sidebar">
-	            <li id="C1" class=""><a href="javascript:topMenuGo('JAVA_BASE_MAIN','C1');"></a></li>
-	            <li id="C2" class=""><a href="javascript:topMenuGo('JAVA_BASE_MAIN','C2');"></a></li>
-	            <li id="C3" class=""><a href="javascript:topMenuGo('JAVA_BASE_MAIN','C3');"></a></li>
+	            <li id="C1" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','C1');"></a></li>
+	            <li id="C2" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','C2');"></a></li>
+	            <li id="C3" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','C3');"></a></li>
 	          </ul>
 	          
 	          

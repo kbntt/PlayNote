@@ -28,7 +28,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript">
 	   
-        function topMenuGo(url,subMenu){
+        function topMenuGo(url,subMenu,page){
             switch (url){
                 case "HOME" :
                     url = "/index";
@@ -45,9 +45,11 @@
                 case "LOGIN_OUT" :
                     url = "/main/loginOut";
                     break;
-                        
                 case "ADMIN_NOTICE_LIST" :
                     url = "/admin/noticeList";
+                    break;
+                case "PROJECT_WIND_RIDER" :
+                    url = "/project/windRider?page="+page+"&subMenu="+subMenu;
                     break;
                 case "WEB_FRAME_VUE_MAIN" :
                     url = "/webFrame/vueMain";
@@ -183,9 +185,12 @@
             </li>
             <li><a href="#">Android</a></li>
             <li><a href="#">C#</a></li>
-            <li><a href="#">Project</a></li>
-            
-            
+            <li>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Project <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','');">windRider</a></li>
+              </ul>
+            </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">WEB FRAME<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
