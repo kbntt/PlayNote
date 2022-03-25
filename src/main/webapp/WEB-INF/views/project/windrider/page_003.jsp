@@ -59,40 +59,96 @@
 	        
 	        <!--/ BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY          -->
 	        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-	          </br>
-	          <h2 class="sub-header">Project > windRider > 이프로젝트는...</h2>
+	          
+	          <h2 class="sub-header">Project > windRider > MySqlDB 생성</h2>
 	          <div class="table-responsive">
 	            <table class="table table-striped">
-	              <h2 class="blog-post-title">왜 만들고 있는가?</h2>
-		            <p class="blog-post-meta">March 1, 2022 by <a href="#">Wind Rider</a></p>
-		            <hr>
-		            <h3>1.React, Vue로 개발하는 프로젝트가 많이 생김 </h3>
-		            </br>
-		            <h5>요즘 주위에서 React, Vue로 개발하는 프로젝트가 많이 보인다.</br></br>
-		            그래서 React, Vue에 대해 구글에서 찾아보니 잠시 뜨고 사라질 것 같지 않아 보인다.</br></br> 
-                    그럼 공부해 보자. 그런데 React, Vue 중 어떤 것을 선택할까...</br></br>  
-                    인터넷에 장단점을 비교한 정보를 봐도 어떤 것을 선택해야 하는지 모르겠다. 그냥 React로 하자.</br></br>
-                    그리고 그냥 공부만으로 끝내기보다는 React를 이용한 프로젝트를 만들어보자.</br></br> 
-		            </h5>
+	              <h2 class="blog-post-title">Spring Tools 설치</h2>
+		            <p class="blog-post-meta">March 25, 2022 by <a href="#">Wind Rider</a></p>
+		            <iframe width="840" height="472" src="https://www.youtube.com/embed/oWIMsXzgK8o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		            <hr>
 		            
-                    <h3>2.참고용 소스를 갖고있자 </h3>
-                    </br>
-                    <h5>프로젝트 개발하고 철수하면 컴퓨터를 포맷해서 남는 소스가 없다.</br></br>
-                    나의 프로젝트를 만들어 나중에 다른 프로젝트를 진행하게 할 때 유용하게 사용할 수 있는 소스를 보유하자.</br></br> 
-                    </h5>
+		            <h3>* DATABASE 생성</h3>
+                    <h5>CREATE DATABASE windrider default character set utf8;<h5>
                     <hr>
+                    </br>
+		            
+		            <h3>* 권한주기</h3>
+                    <h5>GRANT ALL PRIVILEGES windrider.* TO windrider@localhost IDENTIFIED BY 'adminpwd';<h5>
+                    <hr>
+                    </br>
+                    
+                    <h3>* BLOG TABLE 생성</h3>
+                    <h5>
+                    <pre>
+CREATE TABLE BLOG
+(
+    `UUID`         CHAR(36)        NOT NULL    COMMENT '테이블 ID', 
+    `IMG_URL`      VARCHAR(45)     NULL        COMMENT '이미지URL', 
+    `TITLE`        VARCHAR(150)    NOT NULL    COMMENT '제목', 
+    `CONTENTS`     MEDIUMTEXT      NOT NULL    COMMENT '내용', 
+    `DELETE_YN`    CHAR(1)         NOT NULL    DEFAULT 'N' COMMENT 'Y,N', 
+    `UPDATE_USER`  CHAR(36)        NULL        COMMENT '수정자', 
+    `UPDATE_DATE`  DATETIME        NULL        COMMENT '수정일', 
+    `CREATE_USER`  CHAR(36)        NOT NULL    COMMENT '생성자', 
+    `CREATE_DATE`  DATETIME        NOT NULL    COMMENT '생성일', 
+     PRIMARY KEY (UUID)
+);
+
+ALTER TABLE BLOG COMMENT '블로그';
+
+                    </pre>
+<h5>
+                    <hr>
+                    </br>
+                    
+                    <h3>* BLOG 데이타 입력</h3>
+                    <h5>
+                    <pre>
+INSERT INTO BLOG( 
+     `UUID`        
+    ,`IMG_URL`     
+    ,`TITLE`       
+    ,`CONTENTS`    
+    ,`DELETE_YN`   
+    ,`UPDATE_USER` 
+    ,`UPDATE_DATE` 
+    ,`CREATE_USER` 
+    ,`CREATE_DATE` 
+)
+VALUES(
+     uuid()     
+    ,'https://source.unsplash.com/random'
+    ,'2021-12-30 제주도.'
+    ,'청주에서 비행기 타고 제주도로 갔다 '
+    ,'N'
+    ,null
+    ,null
+    ,uuid()
+    ,now()
+)
+;
+
+commit;
+                    </pre>
+<h5>
+                    <hr>
+                    </br>
+                    
+		            
 	            </table>
 	          </div>
 	        </div>
 	        <!--/ BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY          -->
 			
-			
+			<!--/ FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER               -->
+		    <footer class="blog-footer">
+		      <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+		      <p>
+		        <a href="#">Back to top</a>
+		      </p>
+		    </footer>
 		    <!--/ FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER               -->
-	        <jsp:include page="../../footer.jsp" flush="true">
-	             <jsp:param name="language" value="<%= language %>"/>
-	        </jsp:include>
-	        <!--/ FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER               -->
 	      </div>
 	    </div>
     </form>

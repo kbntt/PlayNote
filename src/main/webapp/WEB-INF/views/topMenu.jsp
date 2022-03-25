@@ -55,7 +55,7 @@
                     url = "/webFrame/vueMain";
                     break;
                 case "JAVA_BASE_MAIN" :
-                    url = "/java/base?page=page_001&subMenu="+subMenu;
+                    url = "/java/base?page="+page+"&subMenu="+subMenu;
                     break;    
                     
                 default :
@@ -178,7 +178,7 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">JAVA <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="javascript:topMenuGo('JAVA_BASE_MAIN','');">BASE</a></li>
+                <li><a href="javascript:topMenuGo('JAVA_BASE_MAIN','','page_001');">BASE</a></li>
                 <li><a href="#">GUI</a></li>
                 <li><a href="#">JSP</a></li>
               </ul>
@@ -188,7 +188,7 @@
             <li>
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Project <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','');">windRider</a></li>
+                <li><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','','page_001');">windRider</a></li>
               </ul>
             </li>
             <li class="dropdown">

@@ -59,40 +59,50 @@
 	        
 	        <!--/ BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY          -->
 	        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-	          </br>
-	          <h2 class="sub-header">Project > windRider > 이프로젝트는...</h2>
+	          
+	          <h2 class="sub-header">Project > windRider > Spring Tools 설치</h2>
 	          <div class="table-responsive">
 	            <table class="table table-striped">
-	              <h2 class="blog-post-title">왜 만들고 있는가?</h2>
-		            <p class="blog-post-meta">March 1, 2022 by <a href="#">Wind Rider</a></p>
-		            <hr>
-		            <h3>1.React, Vue로 개발하는 프로젝트가 많이 생김 </h3>
-		            </br>
-		            <h5>요즘 주위에서 React, Vue로 개발하는 프로젝트가 많이 보인다.</br></br>
-		            그래서 React, Vue에 대해 구글에서 찾아보니 잠시 뜨고 사라질 것 같지 않아 보인다.</br></br> 
-                    그럼 공부해 보자. 그런데 React, Vue 중 어떤 것을 선택할까...</br></br>  
-                    인터넷에 장단점을 비교한 정보를 봐도 어떤 것을 선택해야 하는지 모르겠다. 그냥 React로 하자.</br></br>
-                    그리고 그냥 공부만으로 끝내기보다는 React를 이용한 프로젝트를 만들어보자.</br></br> 
-		            </h5>
+	              <h2 class="blog-post-title">Spring Tools 설치</h2>
+		            <p class="blog-post-meta">March 25, 2022 by <a href="#">Wind Rider</a></p>
+		            <iframe width="840" height="472" src="https://www.youtube.com/embed/GsSs4OQQrq8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		            <hr>
 		            
-                    <h3>2.참고용 소스를 갖고있자 </h3>
-                    </br>
-                    <h5>프로젝트 개발하고 철수하면 컴퓨터를 포맷해서 남는 소스가 없다.</br></br>
-                    나의 프로젝트를 만들어 나중에 다른 프로젝트를 진행하게 할 때 유용하게 사용할 수 있는 소스를 보유하자.</br></br> 
-                    </h5>
+		            <h3>* Spring Tools 다운로드 사이트</h3>
+		            <p><a href="https://spring.io/">https://spring.io</a></p>
+		            <hr>
+		            <img src="${pageContext.request.contextPath}/resources/image/project/windRider/01.png" width="665" height="594" alt="" border="10">
+		            <hr>
+		            </br>
+		            
+		            <h3>* New Spring Starter Project Dependencies 설정</h3>
+                    <h5>Spring Web, MySQL Driver, Spring Boot DevTools<h5>
                     <hr>
+                    </br>
+                    
+                    <h3>* application.properties 설정</h3>
+                    <h5>server.port=8083<h5>
+                    <hr>
+                    </br>
+                    
+                    <h3>* 화면확인</h3>
+                    <h5>주소창에 localhost:8083 입력후 확인<h5>
+                    <hr>
+                    </br>
+		            
 	            </table>
 	          </div>
 	        </div>
 	        <!--/ BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY     BODY          -->
 			
-			
+			<!--/ FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER               -->
+		    <footer class="blog-footer">
+		      <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+		      <p>
+		        <a href="#">Back to top</a>
+		      </p>
+		    </footer>
 		    <!--/ FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER               -->
-	        <jsp:include page="../../footer.jsp" flush="true">
-	             <jsp:param name="language" value="<%= language %>"/>
-	        </jsp:include>
-	        <!--/ FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER     FOOTER               -->
 	      </div>
 	    </div>
     </form>
