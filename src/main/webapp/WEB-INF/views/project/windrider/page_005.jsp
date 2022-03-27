@@ -83,7 +83,7 @@ MUI는 견고하고 사용자 정의 가능하며 접근이 용이한 기본 및
                     </br>
                     
                     
-                    <h3>* 참고 github 주소</h3>
+                    <h3>* 참고한 React Templates github 주소</h3>
                     </br>
                     <h5>
                     <pre>
