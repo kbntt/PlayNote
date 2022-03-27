@@ -28,6 +28,9 @@
 	        case "A4" :
 	        	$("#A4").attr('class','active');
 	            break;
+            case "A5" :
+                $("#5").attr('class','active');
+                break;
             case "B1" :
                 $("#B1").attr('class','active');
                 break;
@@ -64,6 +67,7 @@
 	            <li id="A2" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','A2','page_002');">Spring Boot 설치</a></li>
 	            <li id="A3" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','A3','page_003');">MySql DB 생성</a></li>
 	            <li id="A4" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','A4','page_004');">MySql 연동</a></li>
+                <li id="A5" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','A5','page_005');">React MUI 적용</a></li>
 	          </ul>
 	          <!--
 	          <ul class="nav nav-sidebar">
