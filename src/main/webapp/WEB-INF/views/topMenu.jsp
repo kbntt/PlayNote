@@ -183,8 +183,6 @@
                 <li><a href="#">JSP</a></li>
               </ul>
             </li>
-            <li><a href="#">Android</a></li>
-            <li><a href="#">C#</a></li>
             <li>
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Project <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
