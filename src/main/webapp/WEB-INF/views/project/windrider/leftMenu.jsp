@@ -49,6 +49,9 @@
             case "A11" :
                 $("#A11").attr('class','active');
                 break;
+            case "A12" :
+                $("#A12").attr('class','active');
+                break;
             case "B1" :
                 $("#B1").attr('class','active');
                 break;
@@ -92,8 +95,9 @@
                 <li id="A9" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','A9','page_009');">axios 적용</a></li>
                 <li id="A10" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','A10','page_010');">MyLife 작업 01</a></li>
                 <li id="A11" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','A11','page_011');">MyLife 작업 02</a></li>
+                <li id="A12" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','A12','page_012');">저장 Test</a></li>
 	          </ul>
-	          <!-- -->
+	          <!--
 	          <ul class="nav nav-sidebar">
 	            <li id="B1" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','B1');">21</a></li>
 	            <li id="B2" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','B2');">22</a></li>
@@ -133,6 +137,6 @@
                 <li id="C2" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','C2');">54</a></li>
                 <li id="C3" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','C3');">55</a></li>
 	          </ul>
-	           
+	            -->
 	          
 	        </div>
