@@ -52,6 +52,12 @@
             case "A12" :
                 $("#A12").attr('class','active');
                 break;
+            case "A13" :
+                $("#A13").attr('class','active');
+                break;
+            case "A14" :
+                $("#A14").attr('class','active');
+                break;
             case "B1" :
                 $("#B1").attr('class','active');
                 break;
@@ -96,6 +102,8 @@
                 <li id="A10" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','A10','page_010');">MyLife 작업 01</a></li>
                 <li id="A11" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','A11','page_011');">MyLife 작업 02</a></li>
                 <li id="A12" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','A12','page_012');">저장 Test</a></li>
+                <li id="A13" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','A13','page_013');">파일업로드 Spring Boot</a></li>
+                <li id="A14" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','A14','page_014');">파일업로드 react</a></li>
 	          </ul>
 	          <!--
 	          <ul class="nav nav-sidebar">
