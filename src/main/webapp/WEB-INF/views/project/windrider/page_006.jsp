@@ -68,7 +68,12 @@
 		            <iframe width="840" height="472" src="https://www.youtube.com/embed/r02tlO0T4R4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		            <hr>
 		            
-		            
+                    <h3>* github url</h3>
+                    <p><a href="https://github.com/kbntt/windrider-api.git">https://github.com/kbntt/windrider-api.git</a></p>
+                    <p><a href="https://github.com/kbntt/windrider-react.git">https://github.com/kbntt/windrider-react.git</a></p>  
+                    <hr>
+                    </br>
+                    
                     <h3>* react-markdown을 install</h3>
                     <p>yarn add react-markdown</p>
                     </br>

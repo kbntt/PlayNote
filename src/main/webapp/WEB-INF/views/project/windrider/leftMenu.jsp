@@ -58,6 +58,12 @@
             case "A14" :
                 $("#A14").attr('class','active');
                 break;
+            case "A15" :
+                $("#A15").attr('class','active');
+                break;
+            case "A16" :
+                $("#A16").attr('class','active');
+                break;
             case "B1" :
                 $("#B1").attr('class','active');
                 break;
@@ -72,15 +78,6 @@
                 break;
             case "B5" :
                 $("#B5").attr('class','active');
-                break;
-            case "C1" :
-                $("#C1").attr('class','active');
-                break;
-            case "C2" :
-                $("#C2").attr('class','active');
-                break;
-            case "C3" :
-                $("#C3").attr('class','active');
                 break;
 	            
 	        default :
@@ -104,6 +101,8 @@
                 <li id="A12" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','A12','page_012');">저장 Test</a></li>
                 <li id="A13" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','A13','page_013');">파일업로드 Spring Boot</a></li>
                 <li id="A14" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','A14','page_014');">파일업로드 react</a></li>
+                <li id="A15" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','A15','page_015');">MyLife Add1</a></li>
+                <li id="A16" class=""><a href="javascript:topMenuGo('PROJECT_WIND_RIDER','A16','page_016');">MyLife Add2</a></li>
 	          </ul>
 	          <!--
 	          <ul class="nav nav-sidebar">
